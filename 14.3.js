@@ -10,8 +10,9 @@ function pageLoaded(){
             writeOutput();
         }
         else {
-            xhr.open("GET", `https://picsum.photos/v2/list?limit={input.value}`);
+            xhr.open("GET", `https://picsum.photos/v2/list?limit=${input.value}`); // Ошибка в синтаксисе: значение подставлено неверно. Не хватает знака $
             xhr.send();
+            // Нет обработки ответа от сервера и вывода полученных изображений на страницу. Всё это должно быть в обработчике xhr.onload = function() {...}
         }
     }
     function writeOutput() {

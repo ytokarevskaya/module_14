@@ -21,17 +21,21 @@ const jsonString = `
 
 /* Этап 2. Получение данных */
 const data = JSON.parse(jsonString);
-// console.log('data', data);
-const list = data.list;
+console.log('data', data);
+
+// Всё, что ниже этой строчки - можно не писать :) JSON.parse сразу возвращает валидный JS-объект, который и является ответом на задачу
+
+
+// const list = data.list;
 // console.log('list', list[0]);
 
-for (let i=0; i<list.length;i++){
-    const result={
-        name:list[i].name,
-        age:list[i].age,
-        prof:list[i].prof
-    }
-    console.log('result', result);
-}
+// for (let i=0; i<list.length;i++){
+//     const result={
+//         name:list[i].name,
+//         age:list[i].age,
+//         prof:list[i].prof
+//     }
+//     console.log('result', result);
+// }
 
 

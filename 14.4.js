@@ -13,6 +13,7 @@ function pageLoaded(){
             writeOutput();
         }
         else fetch(requst);
+        // Запрос отправляется, но нет обработки ответа и вывода результата на страницу
     }
     function writeOutput() {
         output.innerText = 'одно из чисел вне диапазона от 100 до 300';

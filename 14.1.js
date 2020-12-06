@@ -31,6 +31,9 @@ const xmlString = `
 const xmlDOM = parser.parseFromString(xmlString, "text/xml");
 const listNode = xmlDOM.querySelector("list");
 const studentNode = xmlDOM.querySelectorAll("student");
+let result = {
+  list: []
+};
 
 for(let i=0;i<studentNode.length;i++){
     const nameNode = studentNode[i].querySelector("name");
@@ -39,18 +42,15 @@ for(let i=0;i<studentNode.length;i++){
     const ageNode = studentNode[i].querySelector("age");
     const profNode = studentNode[i].querySelector("prof");
     const langAttr = nameNode.getAttribute('lang');
-    const result = {
+    result.list.push({
         lang: langAttr,
         first: firstNameNode.textContent,
         second: secondNameNode.textContent,
         age: ageNode.textContent,
         prof: profNode.textContent,
-    };
-    console.log('result', result);
+    });
 }
 
+console.log(result);
 
-
-
-
-
+// Почти правильно, но чтобы результат полностью соответствовал условию, информация о студентах должна содержаться в 1-м объекте (не в 2-х разных), а точнее, в его свойстве list. Выше исправила
